@@ -1,6 +1,7 @@
 import { useMediaQuery } from "hooks";
 import { Flex, Section } from "layout";
 import { Button, Form, Input, TextContentTitle } from "primitives";
+import { Buttons } from "../ui/primitives/Buttons/Buttons";
 
 export function WelcomeHero() {
   const { isMobile } = useMediaQuery();
@@ -29,6 +30,7 @@ export function WelcomeHero() {
             Get updates
           </Button>
         </Form>
+        <Buttons />
       </Flex>
     </Section>
   );
