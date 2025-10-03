@@ -1,50 +1,21 @@
-const imgIcon = "http://localhost:3845/assets/c0f1b1e84f1a647d7012817408ad54c00b58342b.svg";
-const imgIcon1 = "http://localhost:3845/assets/2a7d12df49d7097544637e24471f1b67ec39fa13.svg";
+// import type React from "react";
 
-interface XProps {
-  size?: "20" | "24" | "32" | "40" | "48" | "16";
-}
+// Figma assets reserved for future icon variants (kept for parity with design)
+// const imgIcon = "http://localhost:3845/assets/c0f1b1e84f1a647d7012817408ad54c00b58342b.svg";
+// const imgIcon1 = "http://localhost:3845/assets/2a7d12df49d7097544637e24471f1b67ec39fa13.svg";
 
-function X({ size = "48" }: XProps) {
-  return (
-    <div className="relative size-full" data-name="Size=48" data-node-id="4039:11293">
-      <div className="absolute inset-1/4" data-name="Icon" data-node-id="7758:12632">
-        <div className="absolute inset-[-8.333%]" style={{ "--stroke-0": "rgba(30, 30, 30, 1)" } as React.CSSProperties}>
-          <img alt="" className="block max-w-none size-full" src={imgIcon} />
-        </div>
-      </div>
-    </div>
-  );
-}
+type FigmaButtonSize = "Medium" | "Small";
+type FigmaButtonVariant = "Primary" | "Neutral" | "Subtle";
+type FigmaButtonState = "Default" | "Hover" | "Disabled";
 
-interface StarProps {
-  size?: "20" | "24" | "32" | "40" | "48" | "16";
-}
-
-function Star({ size = "48" }: StarProps) {
-  return (
-    <div className="relative size-full" data-name="Size=48" data-node-id="4039:11336">
-      <div className="absolute inset-[8.33%_8.33%_12.42%_8.33%]" data-name="Icon" data-node-id="7758:12320">
-        <div className="absolute inset-[-5.26%_-5%]" style={{ "--stroke-0": "rgba(30, 30, 30, 1)" } as React.CSSProperties}>
-          <img alt="" className="block max-w-none size-full" src={imgIcon1} />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface ButtonProps {
+interface FigmaButtonProps {
   label?: string;
-  iconEnd?: React.ReactNode | null;
-  hasIconEnd?: boolean;
-  hasIconStart?: boolean;
-  iconStart?: React.ReactNode | null;
-  variant?: "Primary" | "Neutral" | "Subtle";
-  state?: "Default" | "Hover" | "Disabled";
-  size?: "Medium" | "Small";
+  variant?: FigmaButtonVariant;
+  state?: FigmaButtonState;
+  size?: FigmaButtonSize;
 }
 
-function Button({ label = "Button", iconEnd = null, hasIconEnd = false, hasIconStart = false, iconStart = null, variant = "Primary", state = "Default", size = "Medium" }: ButtonProps) {
+function FigmaButtonLocal({ label = "Button", variant = "Primary", state = "Default", size = "Medium" }: FigmaButtonProps) {
   if (variant === "Neutral" && state === "Default" && size === "Medium") {
     return (
       <div className="bg-[#e3e3e3] border border-[#767676] border-solid relative rounded-[8px] size-full" data-name="Variant=Neutral, State=Default, Size=Medium" data-node-id="4185:3791">
@@ -107,29 +78,29 @@ function Button({ label = "Button", iconEnd = null, hasIconEnd = false, hasIconS
   );
 }
 
-export function Buttons() {
+export function FigmaButtonsStrip() {
   return (
     <div className="border border-[#303030] border-solid box-border content-stretch flex flex-col gap-[8px] items-start p-[8px] relative size-full" data-name="Buttons" data-node-id="9767:319">
       <div className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full" data-name="Medium" data-node-id="9767:296">
         <div className="bg-[#2c2c2c] border border-[#2c2c2c] border-solid relative rounded-[8px] shrink-0" data-name="Button" data-node-id="9767:254">
-          <Button label="Primary Button M" />
+          <FigmaButtonLocal label="Primary Button M" />
         </div>
         <div className="bg-[#e3e3e3] border border-[#767676] border-solid relative rounded-[8px] shrink-0" data-name="Button" data-node-id="9767:258">
-          <Button label="Neutral Button M" variant="Neutral" />
+          <FigmaButtonLocal label="Neutral Button M" variant="Neutral" />
         </div>
         <div className="box-border content-stretch flex gap-[8px] items-center justify-center overflow-clip p-[12px] relative rounded-[8px] shrink-0" data-name="Button" data-node-id="9767:262">
-          <Button label="Subtle Button M" variant="Subtle" />
+          <FigmaButtonLocal label="Subtle Button M" variant="Subtle" />
         </div>
       </div>
       <div className="content-stretch flex gap-[16px] items-center relative shrink-0 w-full" data-name="Small" data-node-id="9767:320">
         <div className="bg-[#2c2c2c] border border-[#2c2c2c] border-solid relative rounded-[8px] shrink-0" data-name="Button" data-node-id="9767:321">
-          <Button label="Primary Button S" size="Small" />
+          <FigmaButtonLocal label="Primary Button S" size="Small" />
         </div>
         <div className="bg-[#e3e3e3] border border-[#767676] border-solid relative rounded-[8px] shrink-0" data-name="Button" data-node-id="9767:322">
-          <Button label="Neutral Button S" variant="Neutral" size="Small" />
+          <FigmaButtonLocal label="Neutral Button S" variant="Neutral" size="Small" />
         </div>
         <div className="box-border content-stretch flex gap-[8px] items-center justify-center overflow-clip p-[8px] relative rounded-[8px] shrink-0" data-name="Button" data-node-id="9767:323">
-          <Button label="Subtle Button S" variant="Subtle" size="Small" />
+          <FigmaButtonLocal label="Subtle Button S" variant="Subtle" size="Small" />
         </div>
       </div>
     </div>
