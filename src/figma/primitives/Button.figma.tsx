@@ -19,7 +19,10 @@ const sharedProps = {
   }),
 };
 
-figma.connect(Button, "<FIGMA_BUTTONS_BUTTON>", {
+figma.connect(
+  Button,
+  "https://www.figma.com/design/Ki6ZyS01gy2W46wkWXZ5do/Simple-Design-System--Community-?node-id=4185-3778",
+  {
   props: {
     ...sharedProps,
     variant: figma.enum("Variant", {
@@ -35,8 +38,12 @@ figma.connect(Button, "<FIGMA_BUTTONS_BUTTON>", {
       {iconEnd}
     </Button>
   ),
-});
-figma.connect(Button, "<FIGMA_BUTTONS_BUTTON_DANGER>", {
+},
+);
+figma.connect(
+  Button,
+  "https://www.figma.com/design/Ki6ZyS01gy2W46wkWXZ5do/Simple-Design-System--Community-?node-id=4185-3778",
+  {
   props: {
     ...sharedProps,
     variant: figma.enum("Variant", {
@@ -50,7 +57,8 @@ figma.connect(Button, "<FIGMA_BUTTONS_BUTTON_DANGER>", {
       {iconEnd}
     </ButtonDanger>
   ),
-});
+},
+);
 
 figma.connect(ButtonGroup, "<FIGMA_BUTTONS_BUTTON_GROUP>", {
   props: {

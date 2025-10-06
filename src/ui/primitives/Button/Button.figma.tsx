@@ -12,7 +12,7 @@ import figma from "@figma/code-connect"
 
 figma.connect(
   Button,
-  "https://www.figma.com/design/nmQ1SpwHkdkEt2llKby5jN/Simple-Design-System--Community-?node-id=4185%3A3778",
+  "https://www.figma.com/design/Ki6ZyS01gy2W46wkWXZ5do/Simple-Design-System--Community-?node-id=4185-3778",
   {
     props: {
       label: figma.string("Label"),
@@ -35,6 +35,6 @@ figma.connect(
         Small: "small",
       }),
     },
-    example: (props) => <Button />,
+    example: () => <Button />,
   },
 )

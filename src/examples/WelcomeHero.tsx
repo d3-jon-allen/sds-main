@@ -1,7 +1,6 @@
 import { useMediaQuery } from "hooks";
 import { Flex, Section } from "layout";
 import { Button, Form, Input, TextContentTitle } from "primitives";
-import { FigmaButtonsStrip } from "primitives";
 
 export function WelcomeHero() {
   const { isMobile } = useMediaQuery();
@@ -30,7 +29,33 @@ export function WelcomeHero() {
             Get updates
           </Button>
         </Form>
-        <FigmaButtonsStrip />
+        <Button onPress={() => {}} variant="primary">
+          Try it now
+        </Button>
+        <Flex direction="column" gap={flexGap} alignSecondary="center">
+          <Flex gap="600" alignSecondary="center">
+            <Button size="medium" variant="primary" onPress={() => {}}>
+              Primary Button M
+            </Button>
+            <Button size="medium" variant="neutral" onPress={() => {}}>
+              Neutral Button M
+            </Button>
+            <Button size="medium" variant="subtle" onPress={() => {}}>
+              Subtle Button M
+            </Button>
+          </Flex>
+          <Flex gap="600" alignSecondary="center">
+            <Button size="small" variant="primary" onPress={() => {}}>
+              Primary Button S
+            </Button>
+            <Button size="small" variant="neutral" onPress={() => {}}>
+              Neutral Button S
+            </Button>
+            <Button size="small" variant="subtle" onPress={() => {}}>
+              Subtle Button S
+            </Button>
+          </Flex>
+        </Flex>
       </Flex>
     </Section>
   );
